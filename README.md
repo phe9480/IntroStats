@@ -1,6 +1,6 @@
-# rutgers_statisticsII
+# Biomedical Statistics
 
-An R Package is created to facilitate the teaching of Statistics II, Department of Statistics, Rutgers University.
+An R Package is created for introductory statistics in biomedical fields
 
 Instructions to download and install the package
 
@@ -8,7 +8,7 @@ Instructions to download and install the package
 
 install.packages("devtools")
 
-#Install rutgers_statisticsII
+#Install
 
-devtools::install_github("phe9480/rutgers_statisticsII")
+devtools::install_github("phe9480/BiomedStats")
 
