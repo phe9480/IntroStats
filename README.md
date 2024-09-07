@@ -1,6 +1,6 @@
-# Biomedical Statistics
+# Introductory Statistics
 
-An R Package is created for introductory statistics in biomedical fields
+An R Package is created for introductory statistics
 
 Instructions to download and install the package
 
@@ -10,5 +10,5 @@ install.packages("devtools")
 
 #Install
 
-devtools::install_github("phe9480/BiomedStats")
+devtools::install_github("phe9480/IntroStats")
 
