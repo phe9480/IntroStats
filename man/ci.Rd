@@ -2,7 +2,7 @@
 % Please edit documentation in R/ci.R
 \name{ci}
 \alias{ci}
-\title{Clopper/Pearon Exact Confidence Interval (Two-Sided)}
+\title{Confidence Interval (Two-Sided) Calculation}
 \usage{
 ci(r, n, conflev, method = "Clopper-Pearson Exact")
 }
@@ -17,7 +17,7 @@ ci(r, n, conflev, method = "Clopper-Pearson Exact")
 "Wilson Score", "Wilson Score with Continuity", "Asymptotic Normal", and "Asymptotic Normal with Continuity".}
 }
 \description{
-This function calculates the Clopper-Pearson exact CI for a binomial success
+This function implements multiple methods for CI calculation for a binomial success
 probability for r successes out of n trials with confidence level.
 }
 \examples{
