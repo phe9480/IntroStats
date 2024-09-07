@@ -1,6 +1,6 @@
-#' Clopper/Pearon Exact Confidence Interval (Two-Sided)
+#' Confidence Interval (Two-Sided) Calculation
 #'
-#' This function calculates the Clopper-Pearson exact CI for a binomial success
+#' This function implements multiple methods for CI calculation for a binomial success
 #' probability for r successes out of n trials with confidence level.
 #'
 #' @param r number of successes
