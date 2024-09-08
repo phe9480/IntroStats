@@ -26,7 +26,7 @@
 #'
 draw.multi.modes = function(peaks.loc = c(3, 7, 12),  width = c(1,1,1),
                             n = c(1000,1000,1000), ...){
-  n.modes = length(unique(peaks.loc), ...)
+  n.modes = length(unique(peaks.loc))
 
   x = NULL
   for (i in 1:n.modes){
