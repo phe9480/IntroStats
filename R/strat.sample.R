@@ -8,9 +8,11 @@
 #' @param proportional TRUE or FALSE. If true, the sample is proportional to the strata size.
 #'
 #' @examples
+#' #100 numbers from 1 to 100
+#' #1st stratum size 70 and 2nd stratum size 30
+#' #pick a sample of size 10: 7 from 1st stratum and 3 from 2nd stratum which is proportional.
+#' strat.sample(x=1:100, strata=c(rep(1, 70), rep(2, 30)), size=10, proportional = TRUE)
 #'
-#'strat.sample(x=rnorm(100), strata=c(rep(1, 20), rep(2, 40), rep(3, 40)), size=10, proportional = TRUE)
-#'strat.sample(x=rnorm(100), strata=c(rep(1, 20), rep(2, 40), rep(3, 40)), size=12, proportional = TRUE)
 #'
 #' @export
 #'
@@ -27,7 +29,7 @@ strat.sample = function(x, strata, size, proportional = TRUE){
   if(proportional){
     s = NULL
     for (i in 1:n.strata){
-      s = c(s, sample(x[strata == strata[i]], size=ni[i], replace=FALSE))
+      s = c(s, sample(x[strata == u.strata[i]], size=ni[i], replace=FALSE))
     }
   } else {
     s= sample(x, size=size, replace=FALSE)
