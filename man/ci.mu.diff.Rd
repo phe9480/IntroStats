@@ -17,7 +17,8 @@ ci.mu.diff(
   sd2 = NULL,
   known.variance = FALSE,
   equal.variance = TRUE,
-  conflev = 0.95
+  conflev = 0.95,
+  uneqvar.method = "Cochran"
 )
 }
 \arguments{
@@ -46,6 +47,9 @@ ci.mu.diff(
 \item{equal.variance}{TRUE or FALSE}
 
 \item{conflev}{Two-sided confidence level}
+
+\item{uneqvar.method}{"Welch" or "Cochran". This option is applicable only
+in the scenario of unequal and unknown variances}
 }
 \description{
 This function calculates the CI of mean difference with known or unknown variance assuming normal distribution.
@@ -74,5 +78,11 @@ known.variance=TRUE, equal.variance=TRUE)
 
 ci.mu.diff(x1bar=16, n1=20, sd1 = 5, x2bar=12, n2=20, sd2 = 4.5, conflev=0.95,
 known.variance=TRUE, equal.variance=FALSE)
+
+ci.mu.diff(x1bar=16, n1=20, s1 = 5, x2bar=12, n2=20, s2 = 4.5, conflev=0.95,
+known.variance=FALSE, equal.variance=FALSE, uneqvar.method="Cochran")
+
+ci.mu.diff(x1bar=16, n1=20, s1 = 5, x2bar=12, n2=20, s2 = 4.5, conflev=0.95,
+known.variance=FALSE, equal.variance=FALSE, uneqvar.method="Welch")
 
 }
