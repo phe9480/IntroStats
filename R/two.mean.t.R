@@ -113,6 +113,7 @@ two.mean.t <- function(x1, x2, x1bar=NULL, n1=NULL, s1=NULL,
     if(t0 < CV[1] || t0 > CV[2]){conclusion="H0 Rejected"}
     p = pt(-abs(t0), df=df) + 1 - pt (abs(t0), df)
   }
+    cv.CI <- qt(1-alpha/2, df=df)
   } else if (uneqvar.method =="Welch"){
     a1 = s1^2/n1; a2 = s2^2/n2
     se <- sqrt(a1 + a2)
@@ -168,6 +169,7 @@ two.mean.t <- function(x1, x2, x1bar=NULL, n1=NULL, s1=NULL,
     cv.CI <- (a1*q1 + a2*q2) / (a1+a2)
   }
   #CI always 2-sided
+
   margin = cv.CI*se#margin of error
 
   L = delta - margin; R = delta + margin
