@@ -190,7 +190,7 @@ two.mean.t <- function(x1, x2, x1bar=NULL, n1=NULL, s1=NULL,
   if (equal.variance){o$CV = CV} else {o$CV = q}
   o$conclusion = conclusion;
   o$equal.variance = equal.variance
-  o$uneqvar.method	= uneqvar.method
+  if (!equal.variance) {o$uneqvar.method	= uneqvar.method}
 
   return(o)
 }
