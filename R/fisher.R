@@ -1,6 +1,6 @@
 #' Fisher's Exact Test
 #'
-#' This function calculates performs the Fisher's Exact test. 
+#' This function calculates the Fisher's Exact test. 
 #' It is equivalent to fisher.test, however provides the convenience of direct 
 #' calculation based on number of successes and number of trials in each group.
 #' 
@@ -15,7 +15,7 @@
 #' @return An object that has components
 #' \describe{
 #' \item{p}{P value}
-#' \item{CI}{Confidence interval}
+#' \item{odds.ratio.ci}{Confidence interval for odds ratio}
 #' \item{odds.ratio}{Odds Ratio for group 1 vs group 2}
 #' \item{Ha}{Type of hypothesis test: two.sided, less, or greater}
 #' \item{data}{2 by 2 contingency table}
@@ -42,7 +42,7 @@ fisher <- function(r1, n1, r2, n2, alternative = "two.sided",
               conf.int = TRUE, conf.level = conflev, ...)
   o <- list()
   o$p = f$p.value
-  o$CI = f$conf.int
+  o$odds.ratio.ci = f$conf.int
   o$odds.ratio = f$estimate
   o$Ha = f$alternative
   o$data = M
