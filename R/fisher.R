@@ -9,12 +9,14 @@
 #' @param r2 Number of successes in group 2
 #' @param n2 Number of trials in group 2
 #' @param alternative Type of Ha: "two.sided", "less", "greater"
+#' @param alpha Significance level, default 0.05
 #' @param conflev Level of confidence interval
 #' @param ... Additional parameters to pass to fisher.test(). Check ?fisher.test for details.
 #' 
 #' @return An object that has components
 #' \describe{
 #' \item{p}{P value}
+#' \item{conclusion}{Statistical conclusion}
 #' \item{odds.ratio.ci}{Confidence interval for odds ratio}
 #' \item{odds.ratio}{Odds Ratio for group 1 vs group 2}
 #' \item{Ha}{Type of hypothesis test: two.sided, less, or greater}
@@ -32,7 +34,7 @@
 #' 
 #' @export 
 #'
-fisher <- function(r1, n1, r2, n2, alternative = "two.sided",
+fisher <- function(r1, n1, r2, n2, alpha=0.05, alternative = "two.sided",
                    conflev = 0.95,...){
   M <- as.table(rbind(c(r1,r2), c(n1-r1, n2-r2)))
   dimnames(M) <- list(Response = c("Y", "N"),
@@ -42,6 +44,7 @@ fisher <- function(r1, n1, r2, n2, alternative = "two.sided",
               conf.int = TRUE, conf.level = conflev, ...)
   o <- list()
   o$p = f$p.value
+  o$conclusion = ifelse(f$p.value > alpha, "H0 not rejected", "H0 rejected")
   o$odds.ratio.ci = f$conf.int
   o$odds.ratio = f$estimate
   o$Ha = f$alternative
