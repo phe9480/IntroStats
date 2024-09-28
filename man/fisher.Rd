@@ -4,7 +4,16 @@
 \alias{fisher}
 \title{Fisher's Exact Test}
 \usage{
-fisher(r1, n1, r2, n2, alternative = "two.sided", conflev = 0.95, ...)
+fisher(
+  r1,
+  n1,
+  r2,
+  n2,
+  alpha = 0.05,
+  alternative = "two.sided",
+  conflev = 0.95,
+  ...
+)
 }
 \arguments{
 \item{r1}{Number of successes in group 1}
@@ -14,6 +23,8 @@ fisher(r1, n1, r2, n2, alternative = "two.sided", conflev = 0.95, ...)
 \item{r2}{Number of successes in group 2}
 
 \item{n2}{Number of trials in group 2}
+
+\item{alpha}{Significance level, default 0.05}
 
 \item{alternative}{Type of Ha: "two.sided", "less", "greater"}
 
@@ -25,6 +36,7 @@ fisher(r1, n1, r2, n2, alternative = "two.sided", conflev = 0.95, ...)
 An object that has components
 \describe{
 \item{p}{P value}
+\item{conclusion}{Statistical conclusion}
 \item{odds.ratio.ci}{Confidence interval for odds ratio}
 \item{odds.ratio}{Odds Ratio for group 1 vs group 2}
 \item{Ha}{Type of hypothesis test: two.sided, less, or greater}
