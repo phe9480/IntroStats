@@ -4,7 +4,7 @@
 \alias{n.mu.CI}
 \title{Sample Size calculation for achieving adequate precision in population mean estimate}
 \usage{
-n.mu.CI(E, sigma, conflev = 0.95)
+n.mu.CI(E, sigma, conflev = 0.95, method = "Z")
 }
 \arguments{
 \item{E}{Precision of mean estimate, i.e. half of CI length}
@@ -12,12 +12,16 @@ n.mu.CI(E, sigma, conflev = 0.95)
 \item{sigma}{Population standard deviation}
 
 \item{conflev}{Confidence level, eg, 0.95}
+
+\item{method}{"Z" for Z interval or "t" for t interval}
 }
 \description{
 This function calculates the sample size required to achieve adequate precision in population mean estimate
 }
 \examples{
 Example
-n.mu.CI(E=0.5, sigma=1, conflev=0.99)
+n.mu.CI(E=0.6, sigma=1, conflev=0.99)
+
+n.mu.CI(E=0.6, sigma=1, conflev=0.99, method="t")
 
 }
