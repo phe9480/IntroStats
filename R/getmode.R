@@ -22,7 +22,8 @@ getmode <- function(x) {
   if (length(u) == length(x)){
     return(NULL)
   } else{
-    u[which.max(tabulate(match(x, u)))]
+    m <- max(tabulate(match(x, u)))
+    u[tabulate(match(x, u))==m]
   }
 }
 
