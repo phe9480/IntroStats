@@ -2,7 +2,7 @@
 % Please edit documentation in R/getmode.R
 \name{getmode}
 \alias{getmode}
-\title{Confidence Interval (Two-Sided) of mean difference with known or unknown variance}
+\title{Calculate the sample mode}
 \usage{
 getmode(x)
 }
@@ -13,7 +13,8 @@ getmode(x)
 This function calculates the mode of a data set. First, find the frequency of
 each value in the data set. If no value occurs more than once, the data set
 has no mode. Otherwise, mode is defined as the value that occurs with the
-greatest frequency. If more than 1 value has the greatest frequency, the function returns the smallest.
+greatest frequency. If more than 1 value has the greatest frequency,
+the function returns all of them.
 }
 \examples{
 #Example.
