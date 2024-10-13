@@ -1,6 +1,6 @@
 #' One Mean t test
 #'
-#' This function performs one-mean Z test assuming population variance unknown.
+#' This function performs one-mean t test assuming population variance unknown.
 #'
 #' @param x A sample data set of observations
 #' @param xbar Sample mean. Default NULL. If xbar is available, then x is ignored.
