@@ -44,7 +44,7 @@ An object with values including
 }
 }
 \description{
-This function performs one-mean Z test assuming population variance unknown.
+This function performs one-mean t test assuming population variance unknown.
 }
 \examples{
 #Example.
