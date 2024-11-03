@@ -9,9 +9,9 @@ ci.mu(
   n,
   x = NULL,
   s = NULL,
-  sd = 1,
+  sd = NULL,
   conflev = 0.95,
-  method = "Known Variance"
+  method = "Unknown Variance"
 )
 }
 \arguments{
@@ -25,7 +25,9 @@ ci.mu(
 
 \item{sd}{Known standard deviation. Either x or sd is required when method = "Known Variance". This is the population sd}
 
-\item{conflev}{Two-sided confidence level}
+\item{conflev}{Two-sided confidence level. Default 0.95.}
+
+\item{method}{"Unknown Variance" or "Known Variance". Default "Unknown Variance".}
 }
 \description{
 This function calculates the CI of mean with known or unknown variance assuming normal distribution.

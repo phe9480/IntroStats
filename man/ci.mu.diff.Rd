@@ -18,7 +18,7 @@ ci.mu.diff(
   known.variance = FALSE,
   equal.variance = TRUE,
   conflev = 0.95,
-  uneqvar.method = "Cochran"
+  uneqvar.method = "Welch"
 )
 }
 \arguments{
@@ -42,14 +42,14 @@ ci.mu.diff(
 
 \item{sd2}{Known standard deviation for population 2.}
 
-\item{known.variance}{TRUE or FALSE}
+\item{known.variance}{TRUE or FALSE. Default FALSE, i.e. t distribution.}
 
-\item{equal.variance}{TRUE or FALSE}
+\item{equal.variance}{TRUE or FALSE. Default TRUE, i.e. pooled t}
 
 \item{conflev}{Two-sided confidence level}
 
 \item{uneqvar.method}{"Welch" or "Cochran". This option is applicable only
-in the scenario of unequal and unknown variances}
+in the scenario of unequal and unknown variances. Default "Welch".}
 }
 \description{
 This function calculates the CI of mean difference with known or unknown variance assuming normal distribution.
