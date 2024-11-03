@@ -13,10 +13,10 @@
 #' @param sd2 Known standard deviation for population 2.
 #' @param s2 sample 2 standard deviation.
 #' @param conflev Two-sided confidence level
-#' @param known.variance TRUE or FALSE
-#' @param equal.variance TRUE or FALSE
+#' @param known.variance TRUE or FALSE. Default FALSE, i.e. t distribution.
+#' @param equal.variance TRUE or FALSE. Default TRUE, i.e. pooled t
 #' @param uneqvar.method "Welch" or "Cochran". This option is applicable only
-#' in the scenario of unequal and unknown variances
+#' in the scenario of unequal and unknown variances. Default "Welch".
 #'
 #' @examples
 #' #Example (1). The sample x is provided.
@@ -54,7 +54,7 @@
 ci.mu.diff <- function(x1=NULL, x1bar, n1, s1, sd1=NULL,
                        x2=NULL, x2bar, n2, s2, sd2=NULL,
                        known.variance=FALSE, equal.variance=TRUE, conflev=0.95,
-                       uneqvar.method = "Cochran"){
+                       uneqvar.method = "Welch"){
 
   alpha <- 1-conflev
   if(!is.null(x1)){x1bar = mean(x1); s1=sd(x1); n1=length(x1)}
@@ -98,6 +98,9 @@ ci.mu.diff <- function(x1=NULL, x1bar, n1, s1, sd1=NULL,
   L <- diff - q*se
   U <- diff + q*se
   o$CI = c(L, U); o$mean.diff = diff; o$se.mean.diff=se
+  o$known.variance = known.variance
+  o$equal.variance = equal.variance
+  if (!equal.variance && !known.variance){o$uneqvar.method=uneqvar.method}
   if (equal.variance && !known.variance){o$sp=sp}
 
   return(o)

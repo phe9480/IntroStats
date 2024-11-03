@@ -7,7 +7,8 @@
 #' @param x Sample. Default NULL. When x is available, then use x to calculate xbar, n, and s.
 #' @param sd Known standard deviation. Either x or sd is required when method = "Known Variance". This is the population sd
 #' @param s sample standard deviation Either x or s is required when method = "Unknown Variance"
-#' @param conflev Two-sided confidence level
+#' @param conflev Two-sided confidence level. Default 0.95.
+#' @param method "Unknown Variance" or "Known Variance". Default "Unknown Variance".
 #'
 #'
 #' @examples
@@ -28,7 +29,7 @@
 #'
 #' @export
 #'
-ci.mu <- function(xbar, n, x=NULL, s=NULL, sd=1, conflev=0.95, method="Known Variance"){
+ci.mu <- function(xbar, n, x=NULL, s=NULL, sd=NULL, conflev=0.95, method="Unknown Variance"){
   alpha <- 1-conflev
   if(!is.null(x)){xbar = mean(x); s=sd(x); n=length(x)}
 
