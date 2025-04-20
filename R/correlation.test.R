@@ -45,6 +45,7 @@ correlation.test = function(x, y, alpha=0.05, tail="two"){
   L = r - margin
   R = r + margin
   o = list()
+  o$r = r
   o$CI = c(L, R)
   o$cv = q
   o$t0 = t0
